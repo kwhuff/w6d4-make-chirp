@@ -4,6 +4,9 @@
 img {
     width: 100%;
 }
+body {
+    background-color: #CDE6F5;
+}
 h1 {
     font-family: 'Raleway', sans-serif;
 }
