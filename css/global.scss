@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+#photoGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo {
+    width: 28%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 3px;
+    background: #d6d6d6;
+    border: 1px solid #d0d0d0;
+
+    img {
+        margin-bottom: 10px;
+    }
+
+    span {
+        font-weight: bold;
+    }
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+}
+
+label {
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background: url(../images/homescreenbackground.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.btn {
+  background-color: #58E2C2;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+#login:hover {
+
+}
