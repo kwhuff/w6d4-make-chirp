@@ -32,3 +32,25 @@ body {
   font-family: 'Pacifico', cursive;
   font-size: 30px;
 }
+
+h1 {
+  font-family: 'Pacifico', cursive;
+}
+
+label {
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background: url(../images/homescreenbackground.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.btn {
+  background-color: #58E2C2;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+}
