@@ -1,17 +1,29 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+var signup = document.getElementById('signup')
+signup.addEventListener('click', sendSignupData)
 
-import PhotoUploader from '../components/PhotoUploader'
-import PhotoDisplayer from '../components/PhotoDisplayer'
+function sendSignupData(){
+  var name = document.querySelector('#name').value
+  var email = document.querySelector('#email').value
+  var password = document.querySelector('#password').value
+  var file = document.querySelector('#file').value
+  // console.log(name, email, password, file)
 
-window.renderView = function() {
-  ReactDOM.render(
-    <div>
-      <PhotoUploader />
-      <PhotoDisplayer />
-    </div>,
-    document.querySelector('#app')
-  )
+  fetch('http://38115110.ngrok.io/api/signup', {
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      password: password,
+      file: file,
+    }),
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(response => console.log(response))
+  // .then(signedupRedirect)
 }
+  function signedupRedirect(){
 
-renderView()
+  }

@@ -6,26 +6,31 @@ img {
   width: 100%;
 }
 
-#photoGrid {
-  display: flex;
-  flex-wrap: wrap;
+body {
+  background-color: #cde6f5;
+  font-family: 'Raleway', sans-serif;
 }
 
-.photo {
-  width: 28%;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 3px;
-  background: #d6d6d6;
-  border: 1px solid #d0d0d0;
+#signup {
+  background-color: #58e2c2;
+  border: solid 1px white;
 }
 
-.photo img {
-  margin-bottom: 10px;
+#signup:hover {
+  border: solid 1px #cde6f5;
 }
 
-.photo span {
-  font-weight: bold;
+.container {
+  padding: 100px;
+}
+
+.chirpLogo {
+  font-size: 20px;
+}
+
+.logoFont {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
 }
 
 h1 {
