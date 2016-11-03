@@ -8,7 +8,7 @@ function loginHandler() {
   var password = document.querySelector('#password').value
   console.log(email, password)
 
-  fetch('http://38115110.ngrok.io', {
+  fetch('http://38115110.ngrok.io/api/login', {
     body: JSON.stringify({
       email: email,
       password: password
@@ -19,7 +19,7 @@ function loginHandler() {
     }
   })
   .then(response => response.json())
-  .then(signedupHandler)
+  .then(response => console.log(response))
 
 }
 
