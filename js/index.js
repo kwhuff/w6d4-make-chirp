@@ -1,12 +1,45 @@
 var login = document.querySelector('#login')
 
+
+login.addEventListener('keypress', loginHandler)
 login.addEventListener('click', loginHandler)
+
+// function signedupRedirect(data){
+//  sessionStorage.setItem('chirp', data.user.api_token)
+//  window.location.href = '/postLogin.html'
+// }
+
+// function signedupHandler(response) {
+//   if (typeof response.user != 'undefined') {
+//     // sessionStorage.setItem('phetchly', response.user.api_token)
+//     window.location.href = '/postLogin.html'
+//   }
+//   else {
+//     response.forEach(function(error) {
+//
+//       var errorDiv = document.createElement('div')
+//       errorDiv.classList.add('alert', 'alert-danger')
+//       errorDiv.innerHTML = error
+//       document.querySelector('#errors').appendChild(errorDiv)
+//
+//     })
+//   }
+// } //This will be what I will work on once I know that the button actually works
+
+function searchEnter(event) {
+    // console.log(event)
+    if (event.key === 'Enter') {
+        search()
+    }
+}
 
 function loginHandler() {
 
   var email = document.querySelector('#email').value
   var password = document.querySelector('#password').value
   console.log(email, password)
+
+
 
   fetch('http://38115110.ngrok.io/api/login', {
     body: JSON.stringify({
@@ -19,8 +52,25 @@ function loginHandler() {
     }
   })
   .then(response => response.json())
-  .then(response => console.log(response))
 
+  .then(signedupRedirect)
+}
+
+function signedupHandler(response){
+ if ( typeof response.user != 'undefined'){
+   sessionStorage.setItem('chirp', response.user.api_token)
+   window.location.href = '/postLogin.html'
+ }
+ else{
+   response.forEach(function(error){
+
+
+     var errorDiv = document.createElement('div')
+     errorDiv.classList.add('alert', 'alert-danger')
+     errorDiv.innerHTML = error
+     document.querySelector('#errors').appendChild(errorDiv)
+   })
+ }
 }
 
 // function signedupHandler(response) {
