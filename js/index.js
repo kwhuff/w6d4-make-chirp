@@ -39,7 +39,7 @@ function loginHandler() {
   var password = document.querySelector('#password').value
   console.log(email, password)
 
-  alert ("Hello World!");
+
 
   fetch('http://38115110.ngrok.io/api/login', {
     body: JSON.stringify({
@@ -52,6 +52,7 @@ function loginHandler() {
     }
   })
   .then(response => response.json())
+
   .then(signedupRedirect)
 }
 
@@ -62,6 +63,7 @@ function signedupHandler(response){
  }
  else{
    response.forEach(function(error){
+
 
      var errorDiv = document.createElement('div')
      errorDiv.classList.add('alert', 'alert-danger')
