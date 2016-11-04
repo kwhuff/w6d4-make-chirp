@@ -4,17 +4,14 @@ signup.addEventListener('click', sendSignupData)
 function sendSignupData(){
   var formData = new FormData()
 
-  formData.name = document.querySelector('#name').value
-  formData.email = document.querySelector('#email').value
-  formData.password = document.querySelector('#password').value
-  formData.file = document.querySelector('#file').files[0]
+  formData.append('name', document.querySelector('#name').value)
+  formData.append('email', document.querySelector('#email').value)
+  formData.append('password', document.querySelector('#password').value)
+  formData.append('file', document.querySelector('#file').files[0])
 
   fetch('http://38115110.ngrok.io/api/signup', {
     body: formData,
     method: 'POST',
-    headers:{
-      'Content-Type': 'application/json'
-    }
   })
   .then(response => response.json())
   .then(signedupHandler)
