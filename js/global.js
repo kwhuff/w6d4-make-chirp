@@ -8,11 +8,11 @@ import Followers from '../components/Followers'
 import Following from '../components/Following'
 
 ReactDOM.render(
-<Router history={browserHistory}>
-  <Route path="/" component={AllChirps}/>
-  <Route path="/mychirps" component={MyChirps}/>
-  <Route path="/followers" component={Followers}/>
-  <Route path="/following" component={Following}/>
-</Router>,
+  <Router history={browserHistory}>
+    <Route path="/" component={AllChirps}/>
+    <Route path="/mychirps" component={MyChirps}/>
+    <Route path="/followers" component={Followers}/>
+    <Route path="/following" component={Following}/>
+  </Router>,
   document.querySelector('#mainScreen')
 )

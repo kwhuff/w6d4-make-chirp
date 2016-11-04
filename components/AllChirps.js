@@ -14,7 +14,7 @@ class AllChirps extends React.Component{
   }
 
   componentDidMount(){
-    // fetch('http://38115110.ngrok.io/api/all')
+    fetch('http://38115110.ngrok.io/api/all')
     .then(response => response.json())
     .then(response => console.log(response))
     .then(this.updateChirps)
@@ -30,12 +30,8 @@ class AllChirps extends React.Component{
   }
 
   render(){
-    var chirps = this.state.chirps.map((chirp, i) => {
-      return <Chirp chirp={chirp} />
-    })
     return <div>
-      <h1>helloooooooo</h1>
-      {chirps}
+      <h1>hi</h1>
     </div>
   }
 }
