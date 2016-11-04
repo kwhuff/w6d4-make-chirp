@@ -21,9 +21,21 @@ function sendSignupData(){
     }
   })
   .then(response => response.json())
-  .then(response => console.log(response))
+  // .then(response => console.log(response))
   .then(signedupRedirect)
 }
-  function signedupRedirect(){
+  function signedupRedirect(data){
+    // console.log(data)
+    sessionStorage.setItem('chirp', data.user.api_token)
+    window.location.href = '/postLogin.html'
 
-  }
+  // else{
+  //   response.forEach(function(error){
+  //     alert(something went wrong)
+  //     var errorDiv = document.createElement('div')
+  //     errorDiv.classList.add('alert', 'alert-danger')
+  //     errorDiv.innerHTML = error
+  //     document.querySelector('#errors').appendChild(errorDiv)
+  //   })
+  // }
+}
