@@ -4,10 +4,10 @@ signup.addEventListener('click', sendSignupData)
 function sendSignupData(){
   var formData = new FormData()
 
-   formData.name = document.querySelector('#name').value
+  formData.name = document.querySelector('#name').value
   formData.email = document.querySelector('#email').value
-  var password = document.querySelector('#password').value
-  var file = document.querySelector('#file').files[0]
+  formData.password = document.querySelector('#password').value
+  formData.file = document.querySelector('#file').files[0]
 
   fetch('http://38115110.ngrok.io/api/signup', {
     body: formData,
@@ -27,8 +27,7 @@ function signedupHandler(response){
     window.location.href = '/postLogin.html'
   }
   else{
-    response.forEach(function(error){
-
+      response.forEach(function(error){
       var errorDiv = document.createElement('div')
       errorDiv.classList.add('alert', 'alert-danger')
       errorDiv.innerHTML = error
