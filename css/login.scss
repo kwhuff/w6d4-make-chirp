@@ -11,3 +11,25 @@ body {
   border: none;
   font-family: 'Raleway', sans-serif;
 }
+
+h4 {
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 555px) {
+  body {
+    background: url(../images/homescreenbackgroundmobile.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+    .container {
+        display: flex;
+    }
+
+    .form-group {
+      flex: 1;
+    }
+}
