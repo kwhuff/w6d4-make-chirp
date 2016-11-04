@@ -1,0 +1,31 @@
+.sideInfo {
+  margin: 5px;
+  height: 780px;
+  line-height: 50px;
+}
+
+.chirpArea {
+  margin: 5px;
+  height: 180px;
+}
+
+#chirp {
+  width: 100%;
+  height: 95px;
+  margin-top: 10px;
+  float: left;
+  border: 1px solid lightgrey;
+}
+
+.chirpButton {
+  float: right;
+  margin-top: 10px;
+  background-color: #cde6f5;
+  color: black;
+  border: 1px solid lightgrey;
+}
+
+.mainContent {
+  margin: 5px;
+  height: 500px;
+}
