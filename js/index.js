@@ -1,7 +1,6 @@
 var login = document.querySelector('#login')
 
-
-login.addEventListener('keypress', loginHandler)
+password.addEventListener('keypress', pressEnter)
 login.addEventListener('click', loginHandler)
 
 // function signedupRedirect(data){
@@ -26,10 +25,10 @@ login.addEventListener('click', loginHandler)
 //   }
 // } //This will be what I will work on once I know that the button actually works
 
-function searchEnter(event) {
+function pressEnter(event) {
     // console.log(event)
     if (event.key === 'Enter') {
-        search()
+        loginHandler()
     }
 }
 
@@ -53,7 +52,7 @@ function loginHandler() {
   })
   .then(response => response.json())
 
-  .then(signedupRedirect)
+  .then(signedupHandler)
 }
 
 function signedupHandler(response){
@@ -61,16 +60,16 @@ function signedupHandler(response){
    sessionStorage.setItem('chirp', response.user.api_token)
    window.location.href = '/postLogin.html'
  }
- else{
-   response.forEach(function(error){
+   else{
+     response.forEach(function(error){
 
 
-     var errorDiv = document.createElement('div')
-     errorDiv.classList.add('alert', 'alert-danger')
-     errorDiv.innerHTML = error
-     document.querySelector('#errors').appendChild(errorDiv)
-   })
- }
+       var errorDiv = document.createElement('div')
+       errorDiv.classList.add('alert', 'alert-danger')
+       errorDiv.innerHTML = error
+       document.querySelector('#errors').appendChild(errorDiv)
+     })
+   }
 }
 
 // function signedupHandler(response) {
