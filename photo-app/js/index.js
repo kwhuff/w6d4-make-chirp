@@ -1,7 +1,7 @@
 var Login = document.querySelector('#login')
 var signup = document.querySelector('#signup')
 
-signup.addEventListener('click', signupHandler)
+signup.addEventListener('keypress', signupHandler)
 Login.addEventListener('click', signinHandler)
 
 function signupHandler() {
