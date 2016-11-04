@@ -9,13 +9,12 @@ import AllChirps from '../components/AllChirps'
 window.renderView = function() {
 ReactDOM.render(
   <div>
-    <MyProfile />
-    <Following />
-    <Followers />
-    <AllChirps />
+    <AllChirps data={data} />
   </div>,
   document.querySelector('#mainScreen')
 )
+function renderView(){
+
 }
 
 renderView()
