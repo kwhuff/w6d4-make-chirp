@@ -4,10 +4,27 @@ var login = document.querySelector('#login')
 login.addEventListener('keypress', loginHandler)
 login.addEventListener('click', loginHandler)
 
-function signedupRedirect(data){
- sessionStorage.setItem('chirp', data.user.api_token)
- window.location.href = '/postLogin.html'
-}
+// function signedupRedirect(data){
+//  sessionStorage.setItem('chirp', data.user.api_token)
+//  window.location.href = '/postLogin.html'
+// }
+
+// function signedupHandler(response) {
+//   if (typeof response.user != 'undefined') {
+//     // sessionStorage.setItem('phetchly', response.user.api_token)
+//     window.location.href = '/postLogin.html'
+//   }
+//   else {
+//     response.forEach(function(error) {
+//
+//       var errorDiv = document.createElement('div')
+//       errorDiv.classList.add('alert', 'alert-danger')
+//       errorDiv.innerHTML = error
+//       document.querySelector('#errors').appendChild(errorDiv)
+//
+//     })
+//   }
+// } //This will be what I will work on once I know that the button actually works
 
 function searchEnter(event) {
     // console.log(event)
@@ -36,15 +53,22 @@ function loginHandler() {
   })
   .then(response => response.json())
   .then(signedupRedirect)
-
 }
 
-function signedinHandler(response) {
-  // console.log(response)
-  sessionStorage.setItem('chirp', response.user.api_token)
-  window.location.href = '/photos.html'
+function signedupHandler(response){
+ if ( typeof response.user != 'undefined'){
+   sessionStorage.setItem('chirp', response.user.api_token)
+   window.location.href = '/postLogin.html'
+ }
+ else{
+   response.forEach(function(error){
 
-  document.cookie = 'chirp=' + response.user.api_token + '; expires=Thu, 2 Aug 2001 20:47:11 UTC'
+     var errorDiv = document.createElement('div')
+     errorDiv.classList.add('alert', 'alert-danger')
+     errorDiv.innerHTML = error
+     document.querySelector('#errors').appendChild(errorDiv)
+   })
+ }
 }
 
 // function signedupHandler(response) {
