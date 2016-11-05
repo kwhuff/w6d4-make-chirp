@@ -3,6 +3,9 @@ import React from 'react'
 class NewChirp extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+
+    }
     // window.location.reload()
   }
   render() {

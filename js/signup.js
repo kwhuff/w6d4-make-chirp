@@ -9,7 +9,7 @@ function sendSignupData(){
   formData.append('password', document.querySelector('#password').value)
   formData.append('file', document.querySelector('#file').files[0])
 
-  fetch('http://38115110.ngrok.io/api/signup', {
+  fetch('https://fathomless-gorge-57039.herokuapp.com/api/signup', {
     body: formData,
     method: 'POST',
   })
