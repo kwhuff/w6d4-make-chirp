@@ -31,7 +31,7 @@ class NewChirp extends React.Component {
   //   .then((response) => { this.setState ({chirps: response.posts})
   // })
 
-  window.location.reload()
+  // window.location.reload()
 }
   render() {
     var newChirps = this.state.chirpText
