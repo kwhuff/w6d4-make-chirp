@@ -7,24 +7,23 @@ class ChirpTimeline extends React.Component {
     this.state = {
       chirps: []
     }
+
   }
 
   componentDidMount() {
-    fetch('https://ngrok.io/api/all')
+    fetch('https://fathomless-gorge-57039.herokuapp.com/api/all')
     .then(response => response.json())
-    .then(response => {
-      this.setState({
-        chirps: response
-      })
-    })
-  }
+    .then((response) => { this.setState ({chirps: response.posts})
+  })
+}
+
 
   render() {
-    var chirps = this.state.chirps.map((chirp, i) => {
-      return <Chirp data={chirp} key={i} />
+    console.log(this.state.chirps)
+    var chirps = this.state.chirps.map((data, i) => {
+      return <Chirp data={data} key={i} />
     })
-
-    return <div className='form-control mainContent'>
+    return <div>
       {chirps}
     </div>
   }

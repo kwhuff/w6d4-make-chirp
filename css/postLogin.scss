@@ -1,11 +1,11 @@
 .sideInfo{
   margin: 5px;
-  height: 780px;
+  height: 580px;
   line-height: 50px;
 }
 .chirpArea{
   margin: 5px;
-  height: 180px;
+  height: 160px;
 }
 #chirp{
   width: 100%;
@@ -21,10 +21,10 @@
   color: black;
   border: 1px solid lightgrey;
 }
-.mainContent{
-  margin: 5px;
-  height: 500px;
-}
+// .mainContent{
+//   margin: 5px;
+//   height: 500px;
+// }
 .container{
   margin-top: 20px;
 }
@@ -35,10 +35,13 @@
 .individualChirp{
   padding: 5px;
   border: 1px solid lightgrey;
+  background: white;
+  margin: 10px;
 }
 .timeStamp{
   color: lightgrey;
 }
 .largeProfilePic{
-  min-height: 400px;
+  max-height: 225px;
+  min-height: 225px;
 }
