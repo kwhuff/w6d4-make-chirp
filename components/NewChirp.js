@@ -4,9 +4,17 @@ class NewChirp extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      chirpText: ''
     }
     // window.location.reload()
+    this.typing = this.typing.bind(this)
+    this.click = this.click.bind(this)
+  }
+  typing(e){
+
+  }
+  click(e){
+    
   }
   render() {
     return <div className='form-control chirpArea'>

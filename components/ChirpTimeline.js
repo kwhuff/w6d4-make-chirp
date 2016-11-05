@@ -19,12 +19,11 @@ class ChirpTimeline extends React.Component {
 
 
   render() {
-    // console.log(this.state.chirps)
+    console.log(this.state.chirps)
     var chirps = this.state.chirps.map((data, i) => {
       return <Chirp data={data} key={i} />
-      console.log('is this working')
     })
-    return <div className='form-control mainContent'>
+    return <div>
       {chirps}
     </div>
   }
