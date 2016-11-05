@@ -1,5 +1,6 @@
 import React from 'react'
 import Chirp from './Chirp'
+import NewChirp from './NewChirp'
 
 class ChirpTimeline extends React.Component {
   constructor(props) {
@@ -13,13 +14,14 @@ class ChirpTimeline extends React.Component {
   componentDidMount() {
     fetch('https://fathomless-gorge-57039.herokuapp.com/api/all')
     .then(response => response.json())
+    // .then(response => console.log(response))
     .then((response) => { this.setState ({chirps: response.posts})
   })
 }
 
 
   render() {
-    console.log(this.state.chirps)
+    // console.log(this.state.chirps)
     var chirps = this.state.chirps.map((data, i) => {
       return <Chirp data={data} key={i} />
     })
