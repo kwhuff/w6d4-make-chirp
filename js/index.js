@@ -40,7 +40,7 @@ function loginHandler() {
 
 
 
-  fetch('http://38115110.ngrok.io/api/login', {
+  fetch('https://fathomless-gorge-57039.herokuapp.com/api/login', {
     body: JSON.stringify({
       email: email,
       password: password
