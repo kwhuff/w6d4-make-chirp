@@ -19,9 +19,8 @@ class Profile extends React.Component {
       <img className='largeProfilePic' src={this.state.file} alt='FILE' />
       <ul className='list-unstyled'>
         <li>Following</li>
-        <li>Followers</li>
         <li>My Chirps</li>
-        <li>All Chirps</li>
+        <li>All Users</li>
         <li>Logout</li>
       </ul>
     </div>
