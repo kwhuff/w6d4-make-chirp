@@ -6,6 +6,16 @@ import ChirpTimeline from './ChirpTimeline'
 class ChirpsApp extends React.Component {
   constructor(props) {
     super(props)
+    this.updatedChirps = this.updatedChirps.bind(this)
+    this.state = {
+      lastUpdatedChirps: Date.now()
+    }
+  }
+
+  updatedChirps() {
+    this.setState({
+      lastUpdatedChirps: Date.now()
+    })
   }
 
   render() {
@@ -15,8 +25,9 @@ class ChirpsApp extends React.Component {
           <Profile />
         </div>
         <div className='col-sm-9'>
-          <NewChirp />
-          <ChirpTimeline />
+          {/* {this.props.children} */}
+          <NewChirp updatedChirps={this.updatedChirps} />
+          <ChirpTimeline lastUpdatedChirps={this.state.lastUpdatedChirps} />
         </div>
       </div>
     </div>

@@ -8,16 +8,25 @@ class ChirpTimeline extends React.Component {
     this.state = {
       chirps: []
     }
-
+    this.updateChirps = this.updateChirps.bind(this)
   }
 
   componentDidMount() {
+    this.updateChirps()
+  }
+
+  componentWillReceiveProps() {
+    this.updateChirps()
+  }
+
+  updateChirps(){
     fetch('https://fathomless-gorge-57039.herokuapp.com/api/all')
     .then(response => response.json())
     // .then(response => console.log(response))
-    .then((response) => { this.setState ({chirps: response.posts})
-  })
-}
+    .then(response => this.setState({chirps: response.posts}))
+  }
+
+
 
 
   render() {

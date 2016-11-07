@@ -17,11 +17,12 @@ ReactDOM.render(
 
 // ReactDOM.render(
 //   <Router history={browserHistory}>
-//     <Route path="/" component={CMS}/>
-//     <Route path="/allchirps" component={AllChirps}/>
-//     <Route path="/mychirps" component={MyChirps}/>
-//     <Route path="/followers" component={Followers}/>
-//     <Route path="/following" component={Following}/>
+//     <Route path="/" component={ChirpsApp}>
+//       <Route path="allchirps" component={AllChirps}/>
+//       <Route path="mychirps" component={MyChirps}/>
+//       <Route path="followers" component={Followers}/>
+//       <Route path="following" component={Following}/>
+//     </Route>
 //   </Router>,
 //   document.querySelector('#mainScreen')
 // )
